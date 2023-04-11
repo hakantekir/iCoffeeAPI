@@ -1,6 +1,4 @@
 let express = require('express');
-let mysql = require('mysql')
-let date = require('date')
 
 let app = express();
 app.use(express.json());
