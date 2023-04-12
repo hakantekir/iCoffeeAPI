@@ -23,6 +23,10 @@ services:
       MYSQL_DATABASE: iCoffee
     networks:
         - app-network
+    volumes:
+        - db-data:/var/lib/mysql
 networks:
   app-network:
     driver: bridge
+volumes:
+    db-data:
