@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  express:
+    build: .
+    ports:
+      - "8081:8081"
+    environment:
+      - DB_HOST=mysqldb
+      - DB_USER=root
+      - DB_PASS=asdfg12345
+      - DB_NAME=iCoffee
+    depends_on:
+      - mysqldb
+    networks:
+      - app-network
+    restart: always
+  mysqldb:
+    build: ./utils/db
+    command:
+      - "--default-authentication-plugin=mysql_native_password"
+    environment:
+      MYSQL_ROOT_PASSWORD: asdfg12345
+      MYSQL_DATABASE: iCoffee
+    networks:
+        - app-network
+    volumes:
+        - db-data:/var/lib/mysql
+networks:
+  app-network:
+    driver: bridge
+volumes:
+    db-data:
