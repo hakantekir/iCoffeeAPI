@@ -25,7 +25,8 @@ POST /auth/signup
 POST /auth/signin
 
 ### Address
-GET /address/:id
+
+GET /address/:id\
 POST /address/:id
 
 ### Coffee
@@ -33,15 +34,15 @@ GET /coffee
 
 ### Cart
 
-GET /cart/:id
-POST /cart/:id
-PATCH /cart/:id
-DELETE /cart/:id
+GET /cart/:id\
+POST /cart/:id\
+PATCH /cart/:id\
+DELETE /cart/:id\
 GET /cart/details/:id
 
 ### Order
 
-POST /order/:id&:addressId
+POST /order/:id&:addressId\
 POST /order/:id
 
 # License
